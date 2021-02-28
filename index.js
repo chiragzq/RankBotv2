@@ -60,7 +60,7 @@ client.once("ready", async () => {
 });
 
 client.on("message", async (message) => {
-    if(message.author.bot) return;
+    if(message.author.id === client.user.id) return;
     if(config.channels.indexOf(message.channel.id) >= 0) {
         let result;
         if(result = message.content.match(/\d{17}/)) {
